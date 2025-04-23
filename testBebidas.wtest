@@ -1,2 +1,37 @@
-import tito.*
 import bebidas.*
+import tito.*
+
+describe "Test de Tito y las bebidas" {
+
+  test "Tito tomo 2 cm3 de whisky, por lo tanto su rendimiento es de 0.81" {
+    tito.consumir_De_(2, whisky)
+    assert.equals(0.81, tito.rendimiento())
+  }
+
+  test "Tito tomo 20 cm3 de terere, por lo tanto su rendimiento es de 2" {
+    tito.consumir_De_(20, terere)
+    assert.equals(2, tito.rendimiento())
+  }
+
+  test "Despues tito, tomo 30 cm3 de cianuro y su rendimiento bajo a 0" {
+    tito.consumir_De_(20, terere)
+    tito.consumir_De_(30, cianuro)
+    assert.equals(0, tito.rendimiento())
+  }
+
+  test "Tito tomo 2 cm3 de whisky, despues tomo 20 cm3 de terere y como olvida que bebidas tomo su rendimiento quedo en 2" {
+    tito.consumir_De_(2, whisky)
+    tito.consumir_De_(20, terere)
+    assert.equals(2, tito.rendimiento())
+  }
+
+  test "Tito tomo 9 cm3 de terere y su rendimiento quedo en 1" {
+    tito.consumir_De_(9, terere)
+    assert.equals(1, tito.rendimiento())
+  }
+
+  test "Despues de tomar 20 cm3 de terere su velocidad subio a 14" {
+    tito.consumir_De_(20, terere)
+    assert.equals(14, tito.velocidad())
+  }
+}

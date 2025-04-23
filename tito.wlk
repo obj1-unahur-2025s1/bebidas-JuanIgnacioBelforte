@@ -1,3 +1,5 @@
+import bebidas.*
+
 object tito {
   const peso = 70
   var rendimiento = 0
@@ -7,7 +9,7 @@ object tito {
 
   method rendimiento() = rendimiento
 
-  method consumir(cantidad, bebida) {
+  method consumir_De_(cantidad, bebida) {
     rendimiento = bebida.efectoPorConsumir(cantidad) 
     estado = bebida.efecto()
   }
